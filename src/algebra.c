@@ -216,7 +216,7 @@ Matrix inv_matrix(Matrix a)
     {
         for (j = 0; j < a.cols; j++)
         {
-            Ans.data[i][j] = det_matrix(delete_matrix(a, i, j)) / det;
+            Ans.data[j][i] = det_matrix(delete_matrix(a, i, j)) / det;
             if ((i + j) % 2 == 1)
             {
                 Ans.data[i][j] = -1 * Ans.data[i][j];
