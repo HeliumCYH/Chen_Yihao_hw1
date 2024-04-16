@@ -219,7 +219,7 @@ Matrix inv_matrix(Matrix a)
             Ans.data[j][i] = det_matrix(delete_matrix(a, i, j)) / det;
             if ((i + j) % 2 == 1)
             {
-                Ans.data[i][j] = -1 * Ans.data[i][j];
+                Ans.data[j][i] = -1 * Ans.data[j][i];
             }
         }
     }
