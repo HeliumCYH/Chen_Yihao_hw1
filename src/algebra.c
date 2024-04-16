@@ -181,7 +181,7 @@ double det_matrix(Matrix a)
     //定义游标与答案
     int i, j;
     double ans = 0;
-    int Temp = 0;
+    double Temp = 0;
     //遍历并且利用拉普拉斯定理计算矩阵的行列式
     for (i = 0; i < a.cols; i++)
     {
@@ -307,7 +307,7 @@ double trace_matrix(Matrix a)
     }
     //计算矩阵的迹
     int i;
-    int Ans = 0;
+    double Ans = 0;
     for (i = 0; i < a.rows; i++)
     {
         Ans += a.data[i][i];
