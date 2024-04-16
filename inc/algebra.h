@@ -1,3 +1,11 @@
+/*
+ * @Author: HeliumCYH 1307576625@qq.com
+ * @Date: 2024-03-29 08:08:44
+ * @LastEditors: HeliumCYH 1307576625@qq.com
+ * @LastEditTime: 2024-04-16 20:09:26
+ * @FilePath: \algebra-maind:\Embedded\EMBEDD~1\VISUAL~1\ALGEBR~1\ALGEBR~1\inc\algebra.h
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 #ifndef ALGEBRA_H
 #define ALGEBRA_H
 
@@ -89,5 +97,12 @@ double trace_matrix(Matrix a);
  * @param a 矩阵a
 */
 void print_matrix(Matrix a);
+
+/**
+ * @brief 获取代数余子式剩余矩阵
+ * @param x 矩阵x rols 去除的行 cols 去除的列
+ * @return 拆分后的行/列
+*/
+Matrix delete_matrix(Matrix x, int rows, int cols);
 
 #endif

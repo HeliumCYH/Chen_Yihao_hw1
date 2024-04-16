@@ -65,7 +65,7 @@ Matrix mul_matrix(Matrix a, Matrix b)
         return create_matrix(0, 0);
     }
     // 创建解矩阵变量
-    Matrix Ans = create_matrix(a.rows, a.cols);
+    Matrix Ans = create_matrix(a.rows, b.cols);
     //定义游标
     int i, j, k;
     //遍历执行乘法运算
@@ -115,28 +115,54 @@ Matrix transpose_matrix(Matrix a)
 }
 
 //执行拉普拉斯变换中去除选定元素行与列的操作
-Matrix delete_matrix(Matrix x, int rows, int cols)
+Matrix delete_matrix(Matrix x, int drows, int dcols)
 {
     Matrix Ans = create_matrix(x.rows - 1, x.cols - 1);
     int i, j;
     for (i = 0; i < x.rows; i++)
     {
-        if (i == rows)
+        if (i == drows)
         {
             continue;
         }
         for (j = 0; j < x.cols; j++)
         {
-            if (j == cols)
+            if (j == dcols)
             {
                 continue;
             }
             else
             {
-                Ans.data[i - (i / rows)][j - (j / cols)] = x.data[i][j];
+            	if (i < drows)
+            	{
+            		if (j < dcols)
+            		{
+            			Ans.data[i][j] = x.data[i][j];
+					}
+					else
+					{
+						Ans.data[i][j - 1] = x.data[i][j];
+					}
+				}
+				else
+				{
+					if (j < dcols)
+            		{
+            			Ans.data[i - 1][j] = x.data[i][j];
+					}
+					else
+					{
+						Ans.data[i - 1][j - 1] = x.data[i][j];
+					}
+				}
             }
         }
     }
+    return Ans;
+    /*测试 
+    print_matrix(x);
+    print_matrix(Ans);
+    */
 }
 
 double det_matrix(Matrix a)
@@ -267,7 +293,7 @@ int rank_matrix(Matrix a)
             break;
         }
     }
-    Ans = i;
+    Ans = i + 1;
     return Ans;
 }
 
