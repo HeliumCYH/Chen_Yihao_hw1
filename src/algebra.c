@@ -180,7 +180,7 @@ double det_matrix(Matrix a)
     }
     //定义游标与答案
     int i, j;
-    int ans = 0;
+    double ans = 0;
     int Temp = 0;
     //遍历并且利用拉普拉斯定理计算矩阵的行列式
     for (i = 0; i < a.cols; i++)
