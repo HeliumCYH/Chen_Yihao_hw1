@@ -1,0 +1,136 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"D:/Embedded/MinGw/lib/gcc/mingw32/6.3.0/include",
+						"D:/Embedded/MinGw/include",
+						"D:/Embedded/MinGw/lib/gcc/mingw32/6.3.0/include-fixed",
+						"D:/Embedded/MinGw/mingw32/include"
+					],
+					"linkDirectories" : 
+					[
+						"D:/Embedded/MinGw/lib/gcc/mingw32/6.3.0",
+						"D:/Embedded/MinGw/lib/gcc",
+						"D:/Embedded/MinGw/mingw32/lib",
+						"D:/Embedded/MinGw/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"mingw32",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"advapi32",
+						"shell32",
+						"user32",
+						"kernel32",
+						"mingw32",
+						"gcc",
+						"moldname",
+						"mingwex"
+					]
+				},
+				"path" : "D:/Embedded/MinGw/bin/gcc.exe",
+				"version" : "6.3.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"D:/Embedded/MinGw/lib/gcc/mingw32/6.3.0/include/c++",
+						"D:/Embedded/MinGw/lib/gcc/mingw32/6.3.0/include/c++/mingw32",
+						"D:/Embedded/MinGw/lib/gcc/mingw32/6.3.0/include/c++/backward",
+						"D:/Embedded/MinGw/lib/gcc/mingw32/6.3.0/include",
+						"D:/Embedded/MinGw/include",
+						"D:/Embedded/MinGw/lib/gcc/mingw32/6.3.0/include-fixed",
+						"D:/Embedded/MinGw/mingw32/include"
+					],
+					"linkDirectories" : 
+					[
+						"D:/Embedded/MinGw/lib/gcc/mingw32/6.3.0",
+						"D:/Embedded/MinGw/lib/gcc",
+						"D:/Embedded/MinGw/mingw32/lib",
+						"D:/Embedded/MinGw/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"stdc++",
+						"mingw32",
+						"gcc_s",
+						"gcc",
+						"moldname",
+						"mingwex",
+						"advapi32",
+						"shell32",
+						"user32",
+						"kernel32",
+						"mingw32",
+						"gcc_s",
+						"gcc",
+						"moldname",
+						"mingwex"
+					]
+				},
+				"path" : "D:/Embedded/MinGw/bin/g++.exe",
+				"version" : "6.3.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm",
+				"ccm",
+				"cxxm",
+				"c++m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"implicit" : {},
+				"path" : "D:/Embedded/MinGw/bin/windres.exe"
+			},
+			"language" : "RC",
+			"sourceFileExtensions" : 
+			[
+				"rc",
+				"RC"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

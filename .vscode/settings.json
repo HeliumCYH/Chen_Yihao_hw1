@@ -16,5 +16,18 @@
             "command": "extension.execute",
             "priority": 4
         }
+<<<<<<< HEAD
     ]
+=======
+<<<<<<< HEAD
+    ]
+=======
+<<<<<<< HEAD
+    ]
+=======
+    ],
+    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools"
+>>>>>>> ea99bdc (create respository)
+>>>>>>> f401d57 (Test)
+>>>>>>> 75ad821 (Test)
 }

@@ -1,0 +1,3 @@
+D:/Embedded/Embedded Projects/Visual Studio Test/algebra-main/algebra-main/build/CMakeFiles/algebra-main.dir
+D:/Embedded/Embedded Projects/Visual Studio Test/algebra-main/algebra-main/build/CMakeFiles/edit_cache.dir
+D:/Embedded/Embedded Projects/Visual Studio Test/algebra-main/algebra-main/build/CMakeFiles/rebuild_cache.dir

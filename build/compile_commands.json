@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/Embedded/Embedded Projects/Visual Studio Test/algebra-main/algebra-main/build",
+  "command": "D:\\Embedded\\MinGw\\bin\\gcc.exe  @CMakeFiles/algebra-main.dir/includes_C.rsp -g -o CMakeFiles\\algebra-main.dir\\src\\algebra.obj -c \"D:\\Embedded\\Embedded Projects\\Visual Studio Test\\algebra-main\\algebra-main\\src\\algebra.c\"",
+  "file": "D:/Embedded/Embedded Projects/Visual Studio Test/algebra-main/algebra-main/src/algebra.c",
+  "output": "CMakeFiles/algebra-main.dir/src/algebra.obj"
+},
+{
+  "directory": "D:/Embedded/Embedded Projects/Visual Studio Test/algebra-main/algebra-main/build",
+  "command": "D:\\Embedded\\MinGw\\bin\\gcc.exe  @CMakeFiles/algebra-main.dir/includes_C.rsp -g -o CMakeFiles\\algebra-main.dir\\src\\main.obj -c \"D:\\Embedded\\Embedded Projects\\Visual Studio Test\\algebra-main\\algebra-main\\src\\main.c\"",
+  "file": "D:/Embedded/Embedded Projects/Visual Studio Test/algebra-main/algebra-main/src/main.c",
+  "output": "CMakeFiles/algebra-main.dir/src/main.obj"
+}
+]

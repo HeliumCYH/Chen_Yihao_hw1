@@ -1,0 +1,3 @@
+D:\Embedded\CMake\bin\cmake.exe -E rm -f CMakeFiles\algebra-main.dir/objects.a
+D:\Embedded\MinGw\bin\ar.exe qc CMakeFiles\algebra-main.dir/objects.a @CMakeFiles\algebra-main.dir\objects1.rsp
+D:\Embedded\MinGw\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\algebra-main.dir/objects.a -Wl,--no-whole-archive -o "D:\Embedded\Embedded Projects\Visual Studio Test\algebra-main\algebra-main\bin\algebra-main.exe" -Wl,--out-implib,"D:\Embedded\Embedded Projects\Visual Studio Test\algebra-main\algebra-main\bin\libalgebra-main.dll.a" -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\algebra-main.dir\linkLibs.rsp
