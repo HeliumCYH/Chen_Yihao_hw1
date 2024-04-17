@@ -201,7 +201,7 @@ double det_matrix(Matrix a)
 Matrix inv_matrix(Matrix a)
 {
     //特判矩阵非方阵或行列式为0
-    if (a.rows != a.cols || fabs(det_matrix(a)) <= 1e-6)
+    if (a.rows != a.cols || det_matrix(a) <= 1e-6)
     {
         printf("Error: The matrix must be a square matrix.\n");
         return create_matrix(0, 0);
@@ -218,7 +218,7 @@ Matrix inv_matrix(Matrix a)
         for (j = 0; j < a.cols; j++)
         {
             Ans.data[j][i] = det_matrix(delete_matrix(a, i, j)) / det;
-            if ((i + j) % 2 == 1 && fabs(Ans.data[j][i]) >= 1e-6)
+            if ((i + j) % 2 == 1)
             {
                 Ans.data[j][i] = -1 * Ans.data[j][i];
             }
