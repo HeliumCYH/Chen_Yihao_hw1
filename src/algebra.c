@@ -238,8 +238,10 @@ int rank_matrix(Matrix a)
     i = 0;
     for (i = 0; i < a.cols; i++)
     {
-        printf("line = %d\n", &line);
-        printf("i = %d\n", &i);
+        /*printf("start_line = %d\n", line);
+        printf("start_i = %d\n", i);
+        print_matrix(a);*/
+
         //特判line行i列处为0
         if (fabs(a.data[line][i]) <= 1e-6)
         {
@@ -255,13 +257,11 @@ int rank_matrix(Matrix a)
             }
 
             //特判i列在line行后都无非0元素的情况
-            if (j == a.rows - 1)
+            if (j == a.rows && fabs(a.data[j][i]) <= 1e-6)
             {
                 //Ans--;
-                printf("跳转\n");
+                //printf("jump\n");
                 continue;
-                
-                printf("跳转\n");
             }
 
             //正常情况交换第一个i列处不为0行与line行
@@ -287,13 +287,11 @@ int rank_matrix(Matrix a)
         }
         line++;
         //测试
-        printf("line = %d\n", &line);
-        printf("i = %d\n", &i);
-        print_matrix(a);
+        /*printf("end_line = %d\n", line);
+        printf("end_i = %d\n", i);
+        print_matrix(a);*/
+        
     }
-
-    //测试
-    //print_matrix(a);
 
     //查询最后一个不全为零的行
     for (i = 0; i < a.rows; i++)
@@ -305,12 +303,24 @@ int rank_matrix(Matrix a)
                 break;
             }
         }
-        if (j == a.cols - 1 && fabs(a.data[i][j]) <= 1e-6)
+        if (j == a.cols && fabs(a.data[i][j]) <= 1e-6)
         {
-            //printf("stop");
+            //printf("stop\n");
             break;
         }
     }
+    /*
+    if (i < a.rows && fabs(a.data[i][j]) <= 1e-6)
+    {
+        i--;
+    }
+    */
+    //测试
+    /*
+    printf("end_i = %d\n", i);
+    printf("end_j = %d\n", j);
+    print_matrix(a);
+    */
     Ans = i;
     return Ans;
 }
