@@ -201,7 +201,7 @@ double det_matrix(Matrix a)
 Matrix inv_matrix(Matrix a)
 {
     //特判矩阵非方阵或行列式为0
-    if (a.rows != a.cols || det_matrix(a) == 0)
+    if (a.rows != a.cols || fabs(det_matrix(a)) <= 1e-6)
     {
         printf("Error: The matrix must be a square matrix.\n");
         return create_matrix(0, 0);
@@ -217,7 +217,7 @@ Matrix inv_matrix(Matrix a)
         for (j = 0; j < a.cols; j++)
         {
             Ans.data[j][i] = det_matrix(delete_matrix(a, i, j)) / det;
-            if ((i + j) % 2 == 1)
+            if ((i + j) % 2 == 1 && fabs(Ans.data[j][i]) >= 1e-6)
             {
                 Ans.data[j][i] = -1 * Ans.data[j][i];
             }
@@ -231,31 +231,37 @@ int rank_matrix(Matrix a)
     int i, j, k, Ans, line;
     double Temp;
 
-    //a的秩为行数与列数中较小者，为Ans赋初值
-    if (a.rows > a.cols)
-    {
-        Ans = a.cols;
-    }
-    else
-    {
-        Ans = a.rows;
-    }
+    Ans = 0;
 
     //初始化行游标
     line = 0;
+    i = 0;
     for (i = 0; i < a.cols; i++)
     {
+        printf("line = %d\n", &line);
+        printf("i = %d\n", &i);
         //特判line行i列处为0
-        if (a.data[line][i] == 0)
+        if (fabs(a.data[line][i]) <= 1e-6)
         {
             //寻找到第一个i列位置处不为0的行，进行交换
-            for (j = line; j < a.rows; j++);
+            for (j = line + 1; j < a.rows; j++)
+            {
+                if (fabs(a.data[j][i]) >= 1e-6)
+                {
+                    break;
+                }
+                //
+                printf("exchange\n");
+            }
 
             //特判i列在line行后都无非0元素的情况
             if (j == a.rows - 1)
             {
-                Ans--;
+                //Ans--;
+                printf("跳转\n");
                 continue;
+                
+                printf("跳转\n");
             }
 
             //正常情况交换第一个i列处不为0行与line行
@@ -269,31 +275,43 @@ int rank_matrix(Matrix a)
         //正常执行高斯消元
         for (j = line + 1; j < a.rows; j++)
         {
+            if (fabs(a.data[j][i]) <= 1e-6)
+            {
+                continue;
+            }
             Temp = a.data[line][i] / a.data[j][i];
             for (k = 0; k < a.cols; k++)
             {
-                a.data[j][k] = a.data[j][k] * Temp - a.data[line][k];
+                a.data[j][k] = (a.data[j][k] * Temp) - a.data[line][k];
             }
         }
         line++;
+        //测试
+        printf("line = %d\n", &line);
+        printf("i = %d\n", &i);
+        print_matrix(a);
     }
+
+    //测试
+    //print_matrix(a);
 
     //查询最后一个不全为零的行
     for (i = 0; i < a.rows; i++)
     {
         for (j = 0; j < a.cols; j++)
         {
-            if (a.data[i][j] != 0)
+            if (fabs(a.data[i][j]) >= 1e-6)
             {
                 break;
             }
         }
-        if (j == a.cols - 1)
+        if (j == a.cols - 1 && fabs(a.data[i][j]) <= 1e-6)
         {
+            //printf("stop");
             break;
         }
     }
-    Ans = i + 1;
+    Ans = i;
     return Ans;
 }
 
@@ -322,6 +340,10 @@ void print_matrix(Matrix a)
         for (int j = 0; j < a.cols; j++)
         {
             // 按行打印，每个元素占8个字符的宽度，小数点后保留2位，左对齐
+            if (fabs(a.data[i][j]) <= 1e-6)
+            {
+                a.data[i][j] = 0;
+            }
             printf("%-8.2f", a.data[i][j]);
         }
         printf("\n");
