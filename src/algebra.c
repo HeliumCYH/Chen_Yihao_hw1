@@ -201,9 +201,14 @@ double det_matrix(Matrix a)
 Matrix inv_matrix(Matrix a)
 {
     //特判矩阵非方阵或行列式为0
-    if (a.rows != a.cols || det_matrix(a) <= 1e-6)
+    if (a.rows != a.cols)
     {
         printf("Error: The matrix must be a square matrix.\n");
+        return create_matrix(0, 0);
+    }
+    if (fabs(det_matrix(a)) <= 1e-6)
+    {
+        printf("Error: The matrix is singular.\n");
         return create_matrix(0, 0);
     }
     //定义答案矩阵与游标变量
