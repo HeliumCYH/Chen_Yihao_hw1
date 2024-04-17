@@ -208,7 +208,8 @@ Matrix inv_matrix(Matrix a)
     }
     //定义答案矩阵与游标变量
     Matrix Ans = create_matrix(a.rows, a.cols);
-    int i, j, det;
+    int i, j;
+    double det;
     //提前计算矩阵的行列式
     det = det_matrix(a);
     //进行求逆操作
